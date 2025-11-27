@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Details - Top Board Games</title>
+    <link rel="stylesheet" href="details-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="index.html" class="back-button">← Back to All Games</a>
+    </nav>
+
+    <div class="details-container">
+        <header class="game-header" id="gameHeader">
+            <!-- Dynamic content will be inserted here -->
+        </header>
+
+        <main class="game-content">
+            <section class="content-section">
+                <h2 class="section-title">📖 About This Game</h2>
+                <p class="detailed-description" id="detailedDescription"></p>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">🎮 How to Play</h2>
+                <p class="how-to-play" id="howToPlay"></p>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">⭐ Why It's Great</h2>
+                <p class="why-great" id="whyGreat"></p>
+            </section>
+
+            <section class="content-section fun-facts-section">
+                <h2 class="section-title">🎲 Fun Facts</h2>
+                <ul class="fun-facts-list" id="funFactsList">
+                    <!-- Dynamic fun facts will be inserted here -->
+                </ul>
+            </section>
+
+            <section class="game-specs">
+                <h2 class="section-title">📊 Game Specifications</h2>
+                <div class="specs-grid" id="specsGrid">
+                    <!-- Dynamic specs will be inserted here -->
+                </div>
+            </section>
+
+            <section class="cta-section-details">
+                <h2>Ready to Play? 🎉</h2>
+                <p>This game is waiting for you at your local game store or online!</p>
+                <div class="button-group">
+                    <a href="index.html" class="cta-button-secondary">← Explore More Games</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>Made with ❤️ for board game enthusiasts everywhere</p>
+        <p class="footer-note">Rankings based on BoardGameGeek ratings and community popularity</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="details.js"></script>
+</body>
+</html>
+

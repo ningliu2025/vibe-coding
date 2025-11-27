@@ -6,6 +6,13 @@ A welcoming and lively website showcasing the top 10 most popular board games! T
 
 - **Beautiful Hero Section** - Eye-catching gradient background with animated elements
 - **Top 10 Board Games** - Detailed cards with ratings, player count, duration, and complexity
+- **Clickable Game Cards** - Click any game card to see comprehensive details
+- **Detailed Game Pages** - Each game has a dedicated page with:
+  - Extended descriptions and gameplay explanations
+  - "How to Play" guides
+  - "Why It's Great" highlights
+  - Fun facts and trivia
+  - Complete game specifications
 - **Smooth Animations** - Cards fade in on scroll with hover effects
 - **Responsive Design** - Works perfectly on desktop, tablet, and mobile
 - **Interactive Elements** - Parallax scrolling and smooth navigation
@@ -30,6 +37,8 @@ A welcoming and lively website showcasing the top 10 most popular board games! T
 2. No build process or dependencies required!
 3. Scroll down to explore all the games
 4. Hover over cards to see interactive effects
+5. Click on any game card to view detailed information
+6. Use the back button to return to the main page
 
 ## 🎨 Design Highlights
 
@@ -50,8 +59,9 @@ Works great on all modern browsers:
 
 - HTML5
 - CSS3 (Grid, Flexbox, Animations)
-- Vanilla JavaScript
-- Google Fonts
+- Vanilla JavaScript (ES6+)
+- Google Fonts (Poppins & Fredoka)
+- URL parameters for page navigation
 
 ## 💡 Fun Details
 
