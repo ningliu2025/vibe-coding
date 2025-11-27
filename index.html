@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Lively showcase of the 10 most popular modern board games with play details and quick filters." />
+  <title>Top 10 Board Games · Lively Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="eyebrow">Board Game Buzz · 2025 edition</div>
+      <h1>Top 10 games lighting up game nights worldwide</h1>
+      <p class="hero__lead">
+        From cozy family favorites to crunchy strategy marathons, this curated list captures the most-loved
+        tabletop adventures right now. Filter by vibe, compare details, and find the perfect pick for your next
+        gathering.
+      </p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="#games">Meet the games</a>
+        <button class="btn btn--ghost" type="button" data-random-jump>Surprise me</button>
+      </div>
+      <div class="hero__stats">
+        <article class="stat-card">
+          <p class="stat-card__label">Avg. rating</p>
+          <p class="stat-card__value" data-stat-rating>—</p>
+          <p class="stat-card__hint">BoardGameGeek community</p>
+        </article>
+        <article class="stat-card">
+          <p class="stat-card__label">Typical playtime</p>
+          <p class="stat-card__value" data-stat-playtime>—</p>
+          <p class="stat-card__hint">Weighted average</p>
+        </article>
+        <article class="stat-card">
+          <p class="stat-card__label">Best group size</p>
+          <p class="stat-card__value" data-stat-players>—</p>
+          <p class="stat-card__hint">Most flexible range</p>
+        </article>
+      </div>
+    </header>
+
+    <section class="filters" aria-label="Filter board games">
+      <div class="section-heading">
+        <p class="eyebrow">Pick your vibe</p>
+        <h2>Quick filters</h2>
+        <p>Tap a chip to spotlight games that match the energy you want tonight.</p>
+      </div>
+      <div class="filter-chips" data-filter-buttons></div>
+    </section>
+
+    <section class="spotlight" aria-label="Spotlight games">
+      <div class="section-heading">
+        <p class="eyebrow">Instant standouts</p>
+        <h2>Top 3 buzz magnets</h2>
+        <p>These titles keep topping charts thanks to either jaw-dropping design, campaign depth, or pure table joy.</p>
+      </div>
+      <div class="spotlight__grid" data-spotlight></div>
+    </section>
+
+    <section id="games" class="game-section" aria-label="Top 10 board games details">
+      <div class="section-heading">
+        <p class="eyebrow">Deep dive</p>
+        <h2>The definitive top 10</h2>
+        <p>Every entry includes a vibe summary, ideal player count, playtime, and why fans can’t stop recommending it.</p>
+      </div>
+      <div class="game-grid" data-game-grid></div>
+    </section>
+
+    <section class="tips" aria-label="Game night tips">
+      <div class="tips__card">
+        <h2>Game night glow-up</h2>
+        <ul>
+          <li>Pair crunchy euros with cozy snacks so players can refuel between turns.</li>
+          <li>Before teaching, give the TL;DR objective first, then sprinkle rules as they appear.</li>
+          <li>Set the mood with a playlist inspired by the game’s theme—forest folk, space epic, or jazz lounge.</li>
+          <li>Use a visible timer for longer games to keep pacing friendly and expectations clear.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      Curated with love and countless dice rolls · Updated November 2025
+    </footer>
+  </div>
+  <script src="main.js" defer></script>
+</body>
+</html>
