@@ -27,19 +27,25 @@ function populateGameDetails() {
     const gameHeader = document.getElementById('gameHeader');
     gameHeader.innerHTML = `
         <div class="header-background" style="background: linear-gradient(135deg, ${getGradientColors(game.rank)});">
+            <div class="header-image-overlay" style="background-image: url('${game.image}');"></div>
             <div class="header-content">
-                <div class="game-emoji-large">${game.emoji}</div>
-                <div class="header-info">
-                    <div class="rank-badge">Rank #${game.rank}</div>
-                    <h1 class="game-title-large">${game.title}</h1>
-                    <div class="quick-stats">
-                        <span class="quick-stat">👥 ${game.players}</span>
-                        <span class="quick-stat">⏱️ ${game.duration}</span>
-                        <span class="quick-stat">🧩 ${game.complexity}</span>
-                        <span class="quick-stat rating-large">⭐ ${game.rating}/10</span>
+                <div class="header-layout">
+                    <div class="header-image-box">
+                        <img src="${game.image}" alt="${game.title}" class="detail-game-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="detail-image-fallback">${game.emoji}</div>
                     </div>
-                    <div class="header-tags">
-                        ${game.tags.map(tag => `<span class="header-tag">${tag}</span>`).join('')}
+                    <div class="header-info">
+                        <div class="rank-badge">🏆 Rank #${game.rank}</div>
+                        <h1 class="game-title-large">${game.title}</h1>
+                        <div class="quick-stats">
+                            <span class="quick-stat">👥 ${game.players}</span>
+                            <span class="quick-stat">⏱️ ${game.duration}</span>
+                            <span class="quick-stat">🧩 ${game.complexity}</span>
+                            <span class="quick-stat rating-large">⭐ ${game.rating}/10</span>
+                        </div>
+                        <div class="header-tags">
+                            ${game.tags.map(tag => `<span class="header-tag">${tag}</span>`).join('')}
+                        </div>
                     </div>
                 </div>
             </div>

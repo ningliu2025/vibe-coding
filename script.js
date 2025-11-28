@@ -5,6 +5,7 @@ const boardGames = [
         rank: 1,
         emoji: "🏰",
         title: "Brass: Birmingham",
+        image: "https://cf.geekdo-images.com/x3zxjr-Vw5iU4yDPg70Jgw__opengraph/img/giCEySk2Thh_rotzAP5g7b5VaXA=/0x0:3000x1574/fit-in/1200x630/filters:strip_icc()/pic3490053.jpg",
         players: "2-4 Players",
         duration: "60-120 min",
         complexity: "Heavy",
@@ -21,6 +22,7 @@ const boardGames = [
         rank: 2,
         emoji: "🌌",
         title: "Gloomhaven",
+        image: "https://cf.geekdo-images.com/sZYp_3BTDGjh2unaZfZmuA__opengraph/img/Fkq6AOVR2ScRRUoUk9gJk1GPlHY=/0x0:1571x824/fit-in/1200x630/filters:strip_icc()/pic2437871.jpg",
         players: "1-4 Players",
         duration: "60-120 min",
         complexity: "Heavy",
@@ -37,6 +39,7 @@ const boardGames = [
         rank: 3,
         emoji: "🎭",
         title: "Pandemic Legacy: Season 1",
+        image: "https://cf.geekdo-images.com/cTrAWasNHyKMcNs8Zrv5O7sKS6M=/fit-in/1200x630/pic2452831.png",
         players: "2-4 Players",
         duration: "60 min",
         complexity: "Medium",
@@ -53,6 +56,7 @@ const boardGames = [
         rank: 4,
         emoji: "🐉",
         title: "Terraforming Mars",
+        image: "https://cf.geekdo-images.com/wg9oOLcsKvDesSUdZQ4rxw__opengraph/img/BTxqxgYay4C20SYPi2NoKkKj7Mw=/0x0:4266x2239/fit-in/1200x630/filters:strip_icc()/pic3536616.jpg",
         players: "1-5 Players",
         duration: "120 min",
         complexity: "Medium",
@@ -69,6 +73,7 @@ const boardGames = [
         rank: 5,
         emoji: "🗡️",
         title: "Twilight Imperium",
+        image: "https://cf.geekdo-images.com/op7arfF2szSxi1LPYKTHHA__opengraph/img/E48-8EPL8Nm-K0hxIwBY3Sd2-x8=/0x0:1050x551/fit-in/1200x630/filters:strip_icc()/pic3727516.jpg",
         players: "3-6 Players",
         duration: "240-480 min",
         complexity: "Heavy",
@@ -85,6 +90,7 @@ const boardGames = [
         rank: 6,
         emoji: "🌾",
         title: "Agricola",
+        image: "https://cf.geekdo-images.com/dDDo2Hexl80ucK1IlqTk-g__opengraph/img/TRVxGiXLpE0PE0VpC4Y8zznJrLw=/0x0:2000x1050/fit-in/1200x630/filters:strip_icc()/pic831744.jpg",
         players: "1-4 Players",
         duration: "30-120 min",
         complexity: "Medium-Heavy",
@@ -101,6 +107,7 @@ const boardGames = [
         rank: 7,
         emoji: "🏛️",
         title: "7 Wonders Duel",
+        image: "https://cf.geekdo-images.com/zdagMskTF7wJBPjX74XsRw__opengraph/img/HRTpJhPWfkLPLfl-NdGheeCKv8M=/0x0:2000x1050/fit-in/1200x630/filters:strip_icc()/pic2576399.jpg",
         players: "2 Players",
         duration: "30 min",
         complexity: "Medium-Light",
@@ -117,6 +124,7 @@ const boardGames = [
         rank: 8,
         emoji: "🎪",
         title: "Ticket to Ride",
+        image: "https://cf.geekdo-images.com/ZWJg0dCdrWHxVnc0eFXK8w__opengraph/img/enls9cKiEHKF48j8iWVYTnfCqz0=/0x0:519x273/fit-in/1200x630/filters:strip_icc()/pic38668.jpg",
         players: "2-5 Players",
         duration: "30-60 min",
         complexity: "Light",
@@ -133,6 +141,7 @@ const boardGames = [
         rank: 9,
         emoji: "🏝️",
         title: "Catan",
+        image: "https://cf.geekdo-images.com/W3Bsga_uLP9kO91gZ7H8yw__opengraph/img/au7lBQ7eYScLlIWYGXE1hLVxLRo=/0x0:2000x1050/fit-in/1200x630/filters:strip_icc()/pic2419375.jpg",
         players: "3-4 Players",
         duration: "60-120 min",
         complexity: "Light-Medium",
@@ -149,6 +158,7 @@ const boardGames = [
         rank: 10,
         emoji: "👑",
         title: "Wingspan",
+        image: "https://cf.geekdo-images.com/yLZJCVLlIx4c7eJEWUNJ7w__opengraph/img/yS8aXfcVdSJ8JlUuAnumiY_npV8=/0x0:2156x1132/fit-in/1200x630/filters:strip_icc()/pic4458123.jpg",
         players: "1-5 Players",
         duration: "40-70 min",
         complexity: "Medium-Light",
@@ -167,19 +177,24 @@ function createGameCard(game) {
     return `
         <div class="game-card" data-game-id="${game.id}" onclick="navigateToDetails(${game.id})">
             <div class="game-rank">#${game.rank}</div>
-            <span class="game-emoji">${game.emoji}</span>
-            <h3 class="game-title">${game.title}</h3>
-            <p class="game-players">${game.players}</p>
-            <p class="game-description">${game.description}</p>
-            <div class="game-stats">
-                <span class="stat-badge">⏱️ ${game.duration}</span>
-                <span class="stat-badge">🧩 ${game.complexity}</span>
-                <span class="game-rating">⭐ ${game.rating}/10</span>
+            <div class="game-image-container">
+                <img src="${game.image}" alt="${game.title}" class="game-image" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="game-image-fallback">${game.emoji}</div>
             </div>
-            <div class="game-tags">
-                ${game.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+            <div class="game-card-content">
+                <h3 class="game-title">${game.title}</h3>
+                <p class="game-players">${game.players}</p>
+                <p class="game-description">${game.description}</p>
+                <div class="game-stats">
+                    <span class="stat-badge">⏱️ ${game.duration}</span>
+                    <span class="stat-badge">🧩 ${game.complexity}</span>
+                    <span class="game-rating">⭐ ${game.rating}/10</span>
+                </div>
+                <div class="game-tags">
+                    ${game.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                </div>
+                <div class="click-hint">Click to learn more →</div>
             </div>
-            <div class="click-hint">Click to learn more →</div>
         </div>
     `;
 }
