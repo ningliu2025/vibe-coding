@@ -460,6 +460,26 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Page Transitions */
+body {
+    opacity: 1;
+    transition: opacity 0.2s ease;
+    animation: pageLoad 0.3s ease-out;
+}
+
+body.page-transition-out {
+    opacity: 0;
+}
+
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 /* Loading animation for images */
 @keyframes shimmer {
     0% { background-position: -1000px 0; }

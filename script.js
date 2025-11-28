@@ -1,5 +1,5 @@
-// Top 10 Board Games Data
-const boardGames = [
+// Legacy support - boardGames now comes from games-data.js as allGames
+const boardGames = typeof allGames !== 'undefined' ? allGames : [
     {
         id: 1,
         rank: 1,
@@ -199,19 +199,93 @@ function createGameCard(game) {
     `;
 }
 
-// Navigate to details page
+// Navigate to details page with smooth transition
 function navigateToDetails(gameId) {
-    window.location.href = `details.html?id=${gameId}`;
+    // Add fade-out class to body
+    document.body.classList.add('page-transition-out');
+    
+    // Wait for animation to complete before navigating
+    setTimeout(() => {
+        window.location.href = `details.html?id=${gameId}`;
+    }, 200);
+}
+
+// Function to create category navigation
+function createCategoryNav() {
+    const categoryNav = document.getElementById('categoryNav');
+    if (!categoryNav || typeof gameCategories === 'undefined') return;
+
+    gameCategories.forEach((cat, index) => {
+        const btn = document.createElement('button');
+        btn.className = 'category-btn' + (index === 0 ? ' active' : '');
+        btn.style.setProperty('--cat-color', cat.color);
+        btn.innerHTML = `<span class="cat-emoji">${cat.emoji}</span> ${cat.name}`;
+        btn.onclick = () => scrollToCategory(cat.id);
+        if (index === 0) btn.style.background = cat.color;
+        categoryNav.appendChild(btn);
+    });
+}
+
+// Function to create category sections
+function createCategorySections() {
+    const container = document.getElementById('categoriesContainer');
+    if (!container || typeof gameCategories === 'undefined') return;
+
+    gameCategories.forEach(cat => {
+        const games = getGamesByCategory(cat.id);
+        const section = document.createElement('section');
+        section.className = 'category-section';
+        section.id = `category-${cat.id}`;
+        
+        section.innerHTML = `
+            <div class="category-header" style="border-left: 5px solid ${cat.color};">
+                <span class="category-emoji">${cat.emoji}</span>
+                <div class="category-info">
+                    <h2 style="color: ${cat.color};">${cat.name}</h2>
+                    <p>${cat.description}</p>
+                </div>
+                <span class="category-count">${games.length} games</span>
+            </div>
+            <div class="games-grid">
+                ${games.map(game => createGameCard(game)).join('')}
+            </div>
+        `;
+        container.appendChild(section);
+    });
+}
+
+// Scroll to category
+function scrollToCategory(categoryId) {
+    const section = document.getElementById(`category-${categoryId}`);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        
+        // Update active button
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.classList.remove('active');
+            btn.style.background = '';
+        });
+        const cat = getCategoryById(categoryId);
+        event.target.closest('.category-btn').classList.add('active');
+        event.target.closest('.category-btn').style.background = cat.color;
+    }
 }
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', function() {
-    const gamesGrid = document.getElementById('gamesGrid');
-    
-    // Render all games
-    boardGames.forEach(game => {
-        gamesGrid.innerHTML += createGameCard(game);
-    });
+    // Check if we're using the new category system
+    if (typeof gameCategories !== 'undefined' && document.getElementById('categoryNav')) {
+        createCategoryNav();
+        createCategorySections();
+    } else {
+        // Legacy support for old structure
+        const gamesGrid = document.getElementById('gamesGrid');
+        if (gamesGrid) {
+            boardGames.forEach(game => {
+                gamesGrid.innerHTML += createGameCard(game);
+            });
+        }
+    }
 
     // Add intersection observer for scroll animations
     const observerOptions = {

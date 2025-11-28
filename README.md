@@ -5,7 +5,9 @@ A welcoming and lively website showcasing the top 10 most popular board games! T
 ## ✨ Features
 
 - **Beautiful Hero Section** - Eye-catching gradient background with animated elements
-- **Top 10 Board Games** - Detailed cards with ratings, player count, duration, and complexity
+- **6 Game Categories** - 120+ games organized by type (Strategy, Family, Party, Co-op, Thematic, Two-Player)
+- **Sticky Category Navigation** - Quick jump to any category
+- **Game Cover Images** - Beautiful box art for every game
 - **Clickable Game Cards** - Click any game card to see comprehensive details
 - **Detailed Game Pages** - Each game has a dedicated page with:
   - Extended descriptions and gameplay explanations
@@ -13,23 +15,31 @@ A welcoming and lively website showcasing the top 10 most popular board games! T
   - "Why It's Great" highlights
   - Fun facts and trivia
   - Complete game specifications
+- **Smooth Page Transitions** - No flicker when navigating
 - **Smooth Animations** - Cards fade in on scroll with hover effects
 - **Responsive Design** - Works perfectly on desktop, tablet, and mobile
 - **Interactive Elements** - Parallax scrolling and smooth navigation
-- **Easter Egg** - Try the Konami code! (↑ ↑ ↓ ↓ ← → ← → B A)
+- **Easter Egg** - Try the Konami code! (↑ ↑ ↓ ↓ ← → ← → B A) 
 
-## 🎮 Games Featured
+## 🎮 Game Categories (120+ Games!)
 
-1. **Brass: Birmingham** - Industrial Revolution strategy
-2. **Gloomhaven** - Epic tactical combat adventure
-3. **Pandemic Legacy: Season 1** - Cooperative campaign game
-4. **Terraforming Mars** - Space colonization engine-builder
-5. **Twilight Imperium** - Epic space opera
-6. **Agricola** - Medieval farming simulation
-7. **7 Wonders Duel** - Two-player civilization builder
-8. **Ticket to Ride** - Cross-country train adventure
-9. **Catan** - Classic resource trading game
-10. **Wingspan** - Beautiful bird collection game
+### ♟️ Strategy Games (20 games)
+Deep thinking and careful planning - Brass: Birmingham, Terraforming Mars, Twilight Imperium, Scythe, Ark Nova, and more!
+
+### 👨‍👩‍👧‍👦 Family Games (20 games)
+Fun for all ages - Ticket to Ride, Catan, Wingspan, Azul, Cascadia, Kingdomino, and more!
+
+### 🎉 Party Games (20 games)
+Laugh and compete - Codenames, Wavelength, Telestrations, Secret Hitler, Coup, and more!
+
+### 🤝 Cooperative Games (20 games)
+Work together as a team - Gloomhaven, Pandemic Legacy, Spirit Island, The Crew, and more!
+
+### 🐉 Thematic & Adventure (20 games)
+Immersive stories - Star Wars: Rebellion, Nemesis, Root, Mansions of Madness, and more!
+
+### ⚔️ Two-Player Games (20 games)
+Perfect head-to-head - 7 Wonders Duel, Patchwork, Star Realms, Twilight Struggle, and more!
 
 ## 🚀 How to Use
 

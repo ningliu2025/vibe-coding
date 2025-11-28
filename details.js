@@ -4,8 +4,16 @@ function getGameIdFromURL() {
     return parseInt(urlParams.get('id'));
 }
 
-// Find game by ID
+// Find game by ID - works with both old and new data structures
 function findGameById(id) {
+    // Try new structure first
+    if (typeof getGameById === 'function') {
+        return getGameById(id);
+    }
+    // Fall back to old structure
+    if (typeof allGames !== 'undefined') {
+        return allGames.find(game => game.id === id);
+    }
     return boardGames.find(game => game.id === id);
 }
 
@@ -141,5 +149,17 @@ document.addEventListener('DOMContentLoaded', function() {
             header.style.transform = `translateY(${scrolled * 0.3}px)`;
         }
     });
+
+    // Add smooth transition for back button
+    const backButton = document.querySelector('.back-button');
+    if (backButton) {
+        backButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.body.classList.add('page-transition-out');
+            setTimeout(() => {
+                window.location.href = this.getAttribute('href');
+            }, 200);
+        });
+    }
 });
 
